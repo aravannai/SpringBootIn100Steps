@@ -3,17 +3,20 @@
 <html>
 <head>
 <title>Todo's of ${name}</title>
+<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+	    		rel="stylesheet">
 </head>
 <body>
 <h1>
 Your todos are
-	<table>
-		<caption>Your todo's are</caption>
+	<table class="table table-striped">
+		<div class="container">
 		<thead>
 			<tr>
 				<th>Description</th>
 				<th>Target Date</th>
 				<th>Is it Completed</th>
+				<th>Delete</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -21,13 +24,17 @@ Your todos are
 			<tr>
 				<td>${todo.desc}</td>
 				<td>${todo.targetDate}</td>
-				<td>${todo.isDone}</td>
+				<td>${todo.done}</td>
+				<td><a type="button"class="btn btn-warning" href="/delete-todo?id=${todo.id}">Delete </a></td>
 			</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 </h1>
-<br/>
-<a href="/add-todo">Add todo's</a>
+<div><a class="button" href="/add-todo">Add todo's</a></div>
+</div>
+		<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+	    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		
 </body>
 </html>
