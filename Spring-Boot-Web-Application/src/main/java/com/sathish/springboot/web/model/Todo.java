@@ -19,6 +19,10 @@ public class Todo {
         this.targetDate = targetDate;
         this.isDone = isDone;
     }
+    
+    public Todo() {
+    	super();
+    }
 
     public int getId() {
         return id;
