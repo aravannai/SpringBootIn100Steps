@@ -8,12 +8,18 @@
 </head>
 <body>
 <div class="container">
-Add Todo Page for ${name}
+
 <form:form method="post" modelAttribute="todo">
+	<form:hidden path="id"/>
 	<fieldset class="form-group">
 		<form:label path="desc">Description</form:label>
 		<form:input path="desc" type="text" class="form-control" required="required"/>
 		<form:errors path="desc" cssClass="text-warning"/>
+	</fieldset>
+	<fieldset class="form-group">
+		<form:label path="targetDate">TargetDate</form:label>
+		<form:input path="targetDate" type="text" class="form-control" required="required"/>
+		<form:errors path="targetDate" cssClass="text-warning"/>
 	</fieldset>
 	<input type="submit"/>
 </form:form>
